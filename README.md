@@ -1,3 +1,37 @@
+#Developer note
+
+This is a Reactjs project with typescript which displays informations like population, flag, region about all the countries in the world.
+
+API used here is "restcountries.com" and some issue it has, whenever we try 
+this request https://restcountries.com/v3.1/all result wont come always but the below api requst works well always:
+https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital
+
+and data types are:
+interface Country {
+    name: {
+      common: string;
+    };
+    flags: {
+      png: string;
+      alt:string;
+    };
+    population: number;
+    region: string;
+    capital: string[];
+    // Add other properties as needed
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -44,3 +78,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
+
+
+
+
