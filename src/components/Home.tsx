@@ -27,25 +27,22 @@ interface Country {
   }
 
 
-
-
-
 function Home() {
 
     const fetchData = async () => {
         try {
-           const url = `https://restcountries.com/v3.1/all`
-            
-          const response = await axios.get(url);
-          setCountries(response.data);
+          const url = `https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital`;
+          const response = await fetch(url);
+      
+          if (!response.ok) {
+            throw new Error(`Error fetching data: ${response.status}`);
+          }
+      
+          const data = await response.json();
+          setCountries(data);
         } catch (error:any) {
-            setCountries([])
-            if (error.response && error.response.status === 404) {
-                console.log(`Error 404: Country not found`);
-            } else {
-                console.log(`Error: ${error.message}`);
-            }
-          
+          setCountries([]);
+          console.error(`Error: ${error.message}`);
         }
       };
     const debouncedFetchData = debounce(fetchData, 500);
