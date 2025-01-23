@@ -85,7 +85,7 @@ const CountryModal: React.FC<CountryModalProps> = ({ openCountryModal, onClose, 
 <Grid item xs={12} md={6} style={{display:"flex",justifyContent:"center"}}>
                             <Paper style={{ padding: '1rem' }} >
                                 <Typography variant="h6" gutterBottom>Additional Information</Typography>
-                                <Typography variant="body1">Top Level Domain: <Typography color="textSecondary" component="span">{country?.tld.join(', ')}</Typography></Typography>
+                                <Typography variant="body1">Top Level Domain: <Typography color="textSecondary" component="span">{country?.tld?.join(', ')}</Typography></Typography>
                                 <Typography variant="body1">Currencies:</Typography>
                                 <ul>
   {country?.currencies && Object.entries(country.currencies).map(([code, currency]) => (

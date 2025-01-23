@@ -31,7 +31,7 @@ function Home() {
 
     const fetchData = async () => {
         try {
-          const url = `https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital`;
+          const url = `https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital,tld,currencies,languages`;
           const response = await fetch(url);
       
           if (!response.ok) {
